@@ -1,0 +1,13 @@
+## adding function to get lambda-2 in preview programmable filter##
+import numpy as np
+from vtk.numpy_interface import algorithms as algs
+vvector = inputs[0].PointData['velocity']
+
+vstrain = strain(vvector)
+vskew = gradient(vvector) - vstrain
+
+aaa = matmul(vstrain, vstrain) + matmul(vskew, vskew)
+lambdas = np.linalg.eigvals(aaa[:])
+lambdas = real(lambdas)
+lambda2 = sort(lambdas)[:,0]
+output.PointData.append(lambda2, 'lambda2')
