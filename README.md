@@ -4,7 +4,7 @@ This is a repository to generate DNS Kolmogorov flow using **[Dedalus](https://d
 ## **Introduction**
 The following animation is an example for Direct Numerical Simulation (DNS) of a Kolmogorov flow with 384x128x128 grid points. The unit Reynolds number (1/nu) in the code is 90 with forcing of f=sin(y) on x-axis. The 3-d simulation script generate the vectors of velocity fluctuation (u',v',w') and the tensors of stress-strain fluctuation (9 components) to calculate dissipation rate. After 170 timesteps and Re_lambda=113, Dissipation rate = 0.37 and resolution=1.1 x Kolmogorov length-scale. 
 
-![DNS](https://github.com/andhini/DNS_kolmogorov_flow/blob/main/Kolmogorov_flow_384x128x128.gif)
+![DNS](./Kolmogorov_flow_384x128x128.gif)
 
 ## **Content of repository**
 
@@ -26,6 +26,10 @@ Additional script #5 below is to convert ./snapshots.h5 files to vtr and generat
 
 5. hdf2vtk.py
 6. paraview_programablefilter_lambda2.txt
+
+Examples of plots included in #4 script are the power spectra, and filtered (high-pass) and non-filtered kinetic energy below.
+<img src="./power_spectra.png" width="500">
+<img src="./kinetic_energy.png" width="500">
 
 ## **Usage**
 
