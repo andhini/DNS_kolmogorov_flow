@@ -1,15 +1,15 @@
 """
-Dedalus script simulating a 3D periodic incompressible shear flow beased on a shear flow example in Dedalus package
+Dedalus script simulating a 2D periodic incompressible shear flow based on a shear flow example in Dedalus package
 DNS is based on results published by by Lalescu et. al. in  https://doi.org/10.1103/PhysRevLett.110.084102
 
     nu = 1 / Reynolds
 
 To run and plot using e.g. 4 processes:
-    $ mpiexec -n 4 python3 shear_flow.py
-    $ mpiexec -n 4 python3 plot_snapshots.py snapshots/*.h5
+    $  mpiexec -n 4 python3 2Dshear_flow_forcing_LM_new.py
+
+To Continue,first change line 23 (restart point) 
+    $  mpiexec -n 4 python3 2Dshear_flow_forcing_LM_new.py --restart 
 """
-## command : mpiexec -n 12 python3 2Dshear_flow_forcing_LM_new.py
-## if continues : mpiexec -n 12 python3 2Dshear_flow_forcing_LM_new.py --restart (check restart_dir)
 import numpy as np
 import dedalus.public as d3
 import logging, sys
@@ -25,14 +25,14 @@ def main():
     # Parameters
     Lx, Ly = 6*np.pi,2*np.pi
     Nx, Ny = 144,48   
-    Reynolds = 40
+    Reynolds = 40 # cell Re
     dealias = 3/2
     stop_sim_time = 125
     timestepper = d3.RK443
     max_timestep = 0.1
     dtype = np.float64
     A = 1.  # amplitude of forcing
-    kx = 1. # frequency of forcing *1/3 if L=Ny, *1 if L=Nx
+    kx = 1. # frequency of forcing 
    
     # Bases
     coords = d3.CartesianCoordinates('x', 'y')
@@ -73,8 +73,8 @@ def main():
     u_ave['g'] = 0.
     # Es_ave['g'] = 0.
     if not restart:
-        # u.fill_random('g', seed=42, distribution='normal', scale=A*0.01) # Random noise
-        # u.low_pass_filter(scales=0.5)
+        u.fill_random('g', seed=42, distribution='normal', scale=A*0.01) # Random noise
+        u.low_pass_filter(scales=0.5)
         file_handler_mode = 'overwrite'
         initial_timestep = max_timestep
     else:
@@ -199,5 +199,7 @@ def read_inputs(dir_in):
 
 if __name__=='__main__':
     main()
+   
+   
    
    
