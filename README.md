@@ -2,7 +2,7 @@
 This is a repository to generate DNS Kolmogorov flow using **[Dedalus](https://dedalus-project.readthedocs.io/en/latest/#)** based on Dedalus example of 2-D **[Periodic_Shear_flow](https://dedalus-project.readthedocs.io/en/latest/pages/examples/ivp_2d_shear_flow.html)**
 
 ## **Introduction**
-The following animation is an example for Direct Numerical Simulation (DNS) of a Kolmogorov flow with 384x128x128 grid points. The unit Reynolds number (1/nu) in the code is 90 with forcing of f=sin(y) on x-axis. The 3-d simulation script generate the vectors of velocity fluctuation (u',v',w') and the tensors of stress-strain fluctuation (9 components) to calculate dissipation rate. After 170 timesteps and Re_lambda=113, Dissipation rate = 0.37 and resolution=1.1 x Kolmogorov length-scale. Green structures are Q-criterion iso-surfaces visualized in Paraview, Q=10. Slices are vorticity magnitudes.
+The following animation is an example for Direct Numerical Simulation (DNS) of a Kolmogorov flow with 384x128x128 grid points. The unit Reynolds number in the code is defined as Re=1/nu with forcing of f=sin(y) on x-axis. The 3-d simulation script generate the vectors of velocity fluctuation (u',v',w') and the tensors of stress-strain fluctuation (9 components) to calculate dissipation rate. For simulation below, Re=90 and after 170 timesteps, we'll get Dissipation rate = 0.37, Taylor-Microscale Reynolds number Re_lambda=113, and resolution=1.1 x Kolmogorov length-scale. Green structures are Q-criterion iso-surfaces visualized in Paraview, Q=10. Slices are vorticity magnitudes.
 
 ![DNS](./Kolmogorov_flow_384x128x128.gif)
 
@@ -15,7 +15,7 @@ Dedalus scripts solving the two dimensional (2-D) and 3-D Navier stokes equation
 
 The scipts will generate HDF5 files of *.snapshots files and *.checkpoints (for restarting/continuing). The lines start with "# Analysis" are where I define the output variables.
 
-The post-processing scripts are also included below taht will read ./snapshots.h5 files
+The post-processing scripts are also included below that will read ./snapshots.h5 files
 3. 2Dplot_snapshots.py 
 4. plot_outputs_oop_1_checkh5.py :
 
