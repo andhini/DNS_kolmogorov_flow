@@ -36,6 +36,12 @@ Examples of plots included in #4 script are the power spectra, and filtered (hig
 Please generate conda environment and follow the instuction of Dedalus package in **[Dedalus_installation](https://dedalus-project.readthedocs.io/en/latest/pages/installation.html)**
 Example of my conda environment is included in "requirements_conda_env.txt", while the pip (might not needed) is "requirements.txt"
 
+## **Data**
+we've run several simulations for Re=30, 50, and 90. The datasets are stored in the following repository:
+**[Re=30](https://doi.org/10.5281/zenodo.15575430)**
+**[Re=50](https://doi.org/10.5281/zenodo.15577806)**
+**[Re=90](_)**
+
 ## **Contributing**
 
 If you'd like to contribute to Project Title, here are some guidelines:
