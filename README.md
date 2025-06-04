@@ -16,6 +16,7 @@ Dedalus scripts solving the two dimensional (2-D) and 3-D Navier stokes equation
 The scipts will generate HDF5 files of *.snapshots files and *.checkpoints (for restarting/continuing). The lines start with "# Analysis" are where I define the output variables.
 
 The post-processing scripts are also included below that will read ./snapshots.h5 files
+
 3. 2Dplot_snapshots.py 
 4. plot_outputs_oop_1_checkh5.py :
 
