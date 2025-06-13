@@ -39,8 +39,8 @@ Example of my conda environment is included in "requirements_conda_env.txt", whi
 
 ## **Data**
 we've run several simulations for Re=30, 50, and 90. The datasets are stored in the following repository:
-**[Re=30](https://doi.org/10.7488/ds/7960)**,**[or in Zenodo](https://doi.org/10.5281/zenodo.15575430)**
-**[Re=50](https://doi.org/10.7488/ds/7961)**,**[or in Zenodo]((https://doi.org/10.5281/zenodo.15577806))**
+**[Re=30](https://doi.org/10.7488/ds/7960)** **[or in Zenodo](https://doi.org/10.5281/zenodo.15575430)**,
+**[Re=50](https://doi.org/10.7488/ds/7961)** **[or in Zenodo]((https://doi.org/10.5281/zenodo.15577806))**,
 **[Re=90](https://doi.org/10.7488/ds/7963)**
 
 ## **Contributing**
